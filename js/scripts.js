@@ -1,6 +1,8 @@
 var PizzaType = {
-    type:"",
-    quantity:1,
+    init:function(){
+        this.type = "pepporoni";
+        this.quantity = 1;
+    },
     cost:function(){
         if(this.type === "pepporoni"){
             this.cost = this.quantity * 20;
