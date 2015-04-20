@@ -2,7 +2,7 @@
 ## by Chitra Atmakuru
 ### Date: April 15, 2015
 #### Description
-This web app lets user enter type of pizza and calculates the price.
+This web app lets user enter type of pizza,number of pizzas and size of pizza and calculates the price.
 
 #### Setup instructions
 1. Clone this git repository
