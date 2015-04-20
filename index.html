@@ -10,7 +10,7 @@
 
         <!-- SCRIPTS -->
         <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
-        <script src='js/scripts.js'></script>
+        <script src='js/scripts1.js'></script>
 
         <!-- TITLE -->
         <title></title>
@@ -30,36 +30,60 @@
                             <select id='pizza-type' name='pizza-type' class='col-xs-4 form-control'>
                                 <option value ='pepporoni'> Pepporoni </option>
                                 <option value ='cheese'> Cheese </option>
-
+                                <option value ='chicken'> Chicken </option>
                             </select>
                         </div>
                         </div>
 
-
                         <div class='form-group'>
-                            <label for='quantity' class='col-sm-2 control-label'>Quantity:</label>
+                            <label for='pizza-size' class='col-sm-2 control-label'>Size:</label>
                             <div class='col-sm-10'>
-                            <input type='number' id='quantity-pizzas' class='col-xs-2' required min=1 max=100>
+                            <select id='pizza-size' name='pizza-size' class='col-xs-4 form-control'>
+                                <option value ='small'> small </option>
+                                <option value ='medium'> medium </option>
+                                <option value ='large'> large </option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class='form-group'>
+                            <label for='number-of-pizzas' class='col-sm-2 control-label'>Quantity:</label>
+                            <div class='col-sm-10'>
+                            <input type='number' id='number-of-pizzas' class='col-xs-2' required min=1 max=100>
                         </div>
                         </div>
 
                         <div class='form-group'>
-                        <button type='submit' class='btn btn-default'>Order</button>
-                    </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button type='submit' class='btn btn-default'>Order</button>
+                          </div>
+                       </div>
                     </form>
-
-
-
                 <div class='col-md-6'>
                     <div id='show-pizzas'>
-
-
                         <h3>Your Order:</h3>
-                        <ul id='pizza-details'>
-
-                        </ul>
+                        <table class="table table-bordered" id="order-table">
+                          <thead>
+                            <tr>
+                              <th>Pizza-name</th>
+                              <th>size</th>
+                              <th>
+                                Quantity
+                              </th>
+                              <th>cost</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
                     </div>
-                </div>
+
+                    <div id="total-Pay">
+                      <h3>Total cost:$<span class="final-pay"></span> </h3>
+
+                    </div>
+                  </div>
+
+
 
         </div><!-- END DIV CONTAINER -->
     </body>

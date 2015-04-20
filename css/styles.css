@@ -9,6 +9,9 @@
 #show-pizzas {
     display: none;
 }
+#total-pay {
+  display:none;
+}
 
 .list-item {
     cursor: pointer;
