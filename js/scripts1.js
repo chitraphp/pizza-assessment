@@ -3,12 +3,12 @@ var PizzaType = {
               chicken:{small:12, medium:16, large:22},
               cheese:{small:9,medium:13, large:15}
   },
-  total:function() {
-    this.total = (this.cost()) * (this.quantity);
+  pricePerQuantity:function() {
+    this.total = (this.costPerPizza()) * (this.quantity);
     //this.total = 10 * 5;
     return parseFloat(this.total);
   },
-  cost:function(){
+  costPerPizza:function(){
      this.cost = this.price[this.variety][this.pizzaSize];
 
     return parseFloat(this.cost);
@@ -21,11 +21,21 @@ var PizzaType = {
   },
   orderInfo:function(){
     $("#order-table tbody").append("<tr><td>" + this.variety + "</td>" + "<td>" + this.pizzaSize + "</td>" +
-    "<td>" + this.quantity + "</td>" + "<td class='pay'>" + this.total() + "</td></tr>");
+    "<td>" + this.quantity + "</td>" + "<td class='pay'>" + this.pricePerQuantity() + "</td></tr>");
+  },
+  totalPay:function(){
+     var payOrder = 0;
+     $("#order-table .pay").each(function(){
+
+      var value = parseInt($(this).text());
+      payOrder = payOrder + value;
+      //alert(payOrder);
+
+    });
+    return payOrder;
   }
 
-
-};
+  };
 
 $(document).ready(function() {
 
@@ -49,19 +59,8 @@ $(document).ready(function() {
         $("#show-pizzas").show();
         pizzaObj.orderInfo();
 
-        var totalPay = function() {
-          var payOrder = 0;
-           $("#order-table .pay").each(function(){
+        $(".final-pay").text(pizzaObj.totalPay());
 
-            var value = parseInt($(this).text());
-            payOrder = payOrder + value;
-            alert(payOrder);
-
-          });
-          return payOrder;
-        };
-        $(".final-pay").text(totalPay());
-        
       });
 
 });
